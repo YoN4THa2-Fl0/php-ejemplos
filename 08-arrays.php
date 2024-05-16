@@ -87,8 +87,8 @@ $estudiante = array(
 
               $equipo1 =["messi","cueva","neymar"];
               $equipo2 = ["advincula","lewandoski","ronaldhino"];
-              $equipo3 = array_merge($equipo1,$equipo2);
-              foreach($equipos as $Key=>$equipo){
+              $equipos = array_merge($equipo1,$equipo2);
+              foreach($equipos as $Key=>$equipo) {
                 echo $equipo."\n";
               }
 
