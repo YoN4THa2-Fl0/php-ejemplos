@@ -11,12 +11,20 @@
 //echo "\n El promedio de notas es : ".$notapromedio;
 
 //logica que permite dar el mayor de 5 numeros
-$mayor=0;
-for($i=1;$i<=5;$i++){
+//$mayor=0;
+//for($i=1;$i<=5;$i++){
+   // echo "\n Ingrese un numero: ";
+   // $numero = fgets(STDIN);
+   // IF($mayor<$numero) {
+    //    $mayor=$numero;
+   // } 
+
+$menor=0;
+for($i=1;$i>=5;$i++){
     echo "\n Ingrese un numero: ";
     $numero = fgets(STDIN);
-    IF($mayor<$numero) {
-        $mayor=$numero;
+    IF($menor>$numero) {
+        $menor=$numero;
     } 
 }
 
