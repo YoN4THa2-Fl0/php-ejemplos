@@ -91,7 +91,3 @@ $estudiante = array(
               foreach($equipos as $Key=>$equipo) {
                 echo $equipo."\n";
               }
-
-
-
-?>
