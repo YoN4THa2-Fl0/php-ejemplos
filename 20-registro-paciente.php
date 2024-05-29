@@ -6,7 +6,7 @@
         <title>Formulario de registro de paciente </title>
 </head>
 <body>
-    <h1>Rregu¿istro de paciente</h1>
+    <h1>Registro de paciente</h1>
     <form id="formulario" action="21-pdo-post.php" method="post">
         <label for ="nombre">Nombres: </label>
         <input type = "text" id="nombre" name ="nombre" required><br>

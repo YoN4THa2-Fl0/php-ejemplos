@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER ["REQUEST_METHOD"]=="POST") {
     $nombre =$_POST['nombre'];
     $apellido =$_POST['apellido'];
@@ -45,28 +46,40 @@ else {
     $resultado ="0";
 }
 
+if ($talla<0 || $talla >250){
+    echo "ingrese un valor valido (0 a 250)";
+}
+else {
 $servername = "localhost";
 $username ="root";
 $password ="root";
-$dbname ="covid";
+$dbname ="covid"; 
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
-    $conn->beginTransaction();
-    $sql="INSERT INTO 'pacientes' ('nombres','apellidos','edad','talla_m','peso_kg','sintomas_tos',
-    'sintoma_gripe','sintoma_presion_alta',
-    'sintoma_fatiga','sintoma_garraspera','nultima_fecha_vacunacion','resultado')
 
-    VALUES ('$nombre','$apellido','$edad','$talla','$peso','$tos','$fiebre','$dismea',
-    '$dolor_muscular','$gripe','$presion_alta','$fatiga','$garraspera' '$fecha','$resultado');";
+    $conn->beginTransaction();
+    $sql="INSERT INTO pacientes (nombres, apellidos,
+    edad, talla_m, 
+    peso_kg, sintoma_tos, 
+    sintoma_fiebre, sintoma_disnea, 
+    sintoma_dolormuscular, sintoma_gripe,
+    sintoma_presionalta, sintoma_fatiga, sintoma_garraspera,
+    ultima_fecha_vacunacion,
+    resultado)
+
+    VALUES ('$nombre', '$apellido', '$edad', '$talla', '$peso', '$tos', '$fiebre', '$disnea',
+    '$dolor_muscular', '$gripe', '$presion_alta', '$fatiga', '$garraspera', '$fecha', '$resultado');";
 
     $conn->exec($sql);
     $conn->commit();
-    echo "fue registrado correctamente";
+    echo "fue registrado correctamente.";
 
 }
 catch(Exception $e) {
     echo "Error : ".$e->getMessage();
 }
 
+}
 }
 ?>
