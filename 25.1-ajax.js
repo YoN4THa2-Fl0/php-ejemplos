@@ -27,11 +27,11 @@ function agregarFilas(id,paciente) {
     "<tr>"+
     "<td>"+paciente.nombres+"</td>"+
     "<td>"+paciente.edad+"</td>"+
-    "<td>"+paciente.talla+"</td>"+
-    "<td>"+paciente.peso+"</td>"+
-    "<td>"+paciente.tos+"</td>"+
-    "<td>"+paciente.fiebre+"</td>"+
-    "<td>"+paciente.disnea+"</td>"+
+    "<td>"+paciente.talla_m+"</td>"+
+    "<td>"+paciente.peso_kg+"</td>"+
+    "<td>"+paciente.sintomas_tos+"</td>"+
+    "<td>"+paciente.sintomas_fiebre+"</td>"+
+    "<td>"+paciente.sintoma_disnea+"</td>"+
     "<td><button type='button'>Editar</></td>"+
     "</tr>";
     $(id + " tr:last").after(html);
