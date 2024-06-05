@@ -1,5 +1,5 @@
 function buscarPacientes() {
-   const $nombre = $("nombre").val();
+   const $nombre = $("#nombre").val();
    //alert ("Buscando..."+nombre);
    let datos ={
     nombre : $nombre
