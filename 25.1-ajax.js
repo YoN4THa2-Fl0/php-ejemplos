@@ -34,5 +34,5 @@ function agregarFilas(id,paciente) {
     "<td>"+paciente.disnea+"</td>"+
     "<td><button type='button'>Editar</></td>"+
     "</tr>";
-    $(Id + " tr:last").after(html);
+    $(id + " tr:last").after(html);
 }
