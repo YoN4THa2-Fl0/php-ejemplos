@@ -6,6 +6,7 @@
         <title>Edicion de paciente </title>
 </head>
 <body>
+    <center>
     <h1>ACTUALISACION DEL PACIENTE</h1>
     <form id="formulario" action="23-actualizacion.php" method="post">
         <label for ="nombre">Nombres: </label>
@@ -21,21 +22,22 @@
 
         <h2><u>Sintomas</u></h2>
         <input type="checkbox" name ="tos" id = "tos">
-        <label for ="fiebre">Tos</label><br>
+        <label for ="fiebre">Tos</label>
         <input type="checkbox" name ="fiebre" id = "fiebre">
-        <label for ="fiebre">Fiebre</label><br>
+        <label for ="fiebre">Fiebre</label>
         <input type="checkbox" name ="disnea" id = "disnea">
-        <label for ="fiebre">Disnea</label><br>
+        <label for ="fiebre">Disnea</label>
         <input type="checkbox" name ="dolor_muscular" id = "dolor_muscular">
-        <label for ="fiebre">Dolor muscular</label><br>
+        <label for ="fiebre">Dolor muscular</label>
         <label for="fecha">**Fecha de vacunacion:**</label>
         <input type="date" id ="fecha" name="fecha">
         <div class="Botones">
             <br>
             <button type ="submit">Guardar</button>
-            <button>Cancelado</button>
+            <a href ='22-lista-pdo.php?'><button  type='button'>cancelar</button></a>
 </div>
 </form>
+</center>
 </body>
 </html> 
 

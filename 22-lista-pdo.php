@@ -60,7 +60,9 @@
                         echo "<td>".($row["Fiebre"]==1 ? "Si" : "No")."</td>";
                         echo "<td>".($row["Disnea"]==1 ? "Si" : "No")."</td>";
                         echo "<td>".($row["dolor_muscular"]==1 ? "si" : "no")."<td/>";
-                        echo "<td> <button)>Editar</button><button>Eliminar</button></td>";
+                        echo "<td>
+                        <a href ='23-edicion-pdo.php?'><button  type='button'>Editar</button></a>
+                        <button>Eliminar</button></td>";
                         echo "</tr>";
                         //http://localhost/YONA/php-ejemplos/23-edicion-pdo.php
                     }    
