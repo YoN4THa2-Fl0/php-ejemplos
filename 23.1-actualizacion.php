@@ -1,19 +1,6 @@
+
+
 <?php
-
-try {
-    $dsn ="mysql:host=localhost;dbname=covid";
-    $user="root";
-    $pass="";
-    $db = new PDO($dsn, $user, $pass);
-    echo "Hola base de datos tengo conexion\n";
-    $pacientes = $db ->query('SELECT * FROM pacientes where 14<=edad AND edad<= 19');
-    foreach ($pacientes as $row) {
-        echo$row["nombres"]." ".$row["apellidos"].", EDAD :  ".$row["edad"]."\n"; 
-    }
-
-} catch (PDOException $e){
-    echo "Error : ".$e->getMessage(); 
-}
 
 if ($_SERVER ["REQUEST_METHOD"]=="POST") {
     $nombre =$_POST['nombre'];
@@ -34,27 +21,12 @@ if ($_SERVER ["REQUEST_METHOD"]=="POST") {
     $dolor_muscular = array_key_exists("dolor_muscular",$_POST) ? $_POST['dolor_muscular'] : "0";
     $dolor_muscular = $dolor_muscular =="" ? "0" : $dolor_muscular;
 
-    $gripe = array_key_exists("gripe",$_POST) ? $_POST['gripe'] : "0";
-    $gripe = $gripe =="gripe" ? "0" : $gripe;
-
-    $presion_alta = array_key_exists("presion_alta",$_POST) ? $_POST['presion_alta'] : "0";
-    $presion_alta = $presion_alta =="" ? "0" : $presion_alta;
-
-    $fatiga = array_key_exists("fatiga",$_POST) ? $_POST['fatiga'] : "0";
-    $fatiga = $fatiga =="" ? "0" : $fatiga;
-
-    $garraspera = array_key_exists("garraspera",$_POST) ? $_POST['garraspera'] : "0";
-    $garraspera = $garraspera =="" ? "0" : $garraspera;
-
-    $fecha = $_POST['fecha'];
-
-
 
     if (empty($nombre) || empty($apellido) || empty($edad) || empty($talla) || empty($peso)) {
 echo "todos los campos son obligatorios";
 
 } 
-if($tos== 1|| $fiebre== 1|| $disnea== 1|| $dolor_muscular== 1|| $gripe== 1|| $presion_alta== 1|| $fatiga== 1|| $garraspera== 1) {
+if($tos== 1|| $fiebre== 1|| $disnea== 1|| $dolor_muscular== 1) {
     $resultado ="1";
 }
 else {
@@ -78,13 +50,11 @@ try {
     edad, talla_m, 
     peso_kg, sintoma_tos, 
     sintoma_fiebre, sintoma_disnea, 
-    sintoma_dolormuscular, sintoma_gripe,
-    sintoma_presionalta, sintoma_fatiga, sintoma_garraspera,
-    ultima_fecha_vacunacion,
+    sintoma_dolormuscular,
     resultado)
 
     VALUES ('$nombre', '$apellido', '$edad', '$talla', '$peso', '$tos', '$fiebre', '$disnea',
-    '$dolor_muscular', '$gripe', '$presion_alta', '$fatiga', '$garraspera', '$fecha', '$resultado');";
+    '$dolor_muscular');";
 
     $conn->exec($sql);
     $conn->commit();
